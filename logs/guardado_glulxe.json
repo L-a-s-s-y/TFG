@@ -1,0 +1,102 @@
+{"type":"update", "gen":1,
+ "windows":[
+ { "id":22, "type":"grid", "rock":202,
+   "gridwidth":80, "gridheight":1,
+   "left":0, "top":0, "width":80, "height":1 },
+ { "id":19, "type":"buffer", "rock":201,
+   "left":0, "top":1, "width":80, "height":49 }
+ ],
+ "content":[
+ {"id":22, "lines": [
+  { "line":0, "content":[{ "style":"normal", "text":" At End Of Road                                      Score: 36    Moves: 1      "}]}
+ ] },
+ {"id":19, "text": [
+  {"append":true},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {"content":[{ "style":"normal", "text":"Welcome to Adventure!"}]},
+  {},
+  {"content":[{ "style":"header", "text":"ADVENTURE"}]},
+  {"content":[{ "style":"normal", "text":"The Interactive Original"}]},
+  {"content":[{ "style":"normal", "text":"By Will Crowther (1973) and Don Woods (1977)"}]},
+  {"content":[{ "style":"normal", "text":"Reconstructed in three steps by:"}]},
+  {"content":[{ "style":"normal", "text":"Donald Ekman, David M. Baggett (1993) and Graham Nelson (1994)"}]},
+  {"content":[{ "style":"normal", "text":"[In memoriam Stephen Bishop (1820?-1857): GN]"}]},
+  {"content":[{ "style":"normal", "text":"Release 5 / Serial number 961209 / Inform v6.21(G0.33) Library 6/10 "}]},
+  {},
+  {"content":[{ "style":"subheader", "text":"At End Of Road"}]},
+  {"content":[{ "style":"normal", "text":"You are standing at the end of a road before a small brick building. Around you is a forest. A small stream flows out of the building and down a gully."}]},
+  {},
+  {"content":[{ "style":"normal", "text":">"}]}
+ ] }
+ ],
+ "input":[
+ {"id":19, "gen":1, "type":"line", "maxlen":256 }
+ ]}
+
+{"type":"update", "gen":2,
+ "content":[
+ {"id":22, "lines": [
+  { "line":0, "content":[{ "style":"normal", "text":" Inside Building                                     Score: 36    Moves: 2      "}]}
+ ] },
+ {"id":19, "text": [
+  {"append":true, "content":[{ "style":"input", "text":"go east"}]},
+  {},
+  {"content":[{ "style":"subheader", "text":"Inside Building"}]},
+  {"content":[{ "style":"normal", "text":"You are inside a building, a well house for a large spring."}]},
+  {},
+  {"content":[{ "style":"normal", "text":"There are some keys on the ground here."}]},
+  {},
+  {"content":[{ "style":"normal", "text":"There is tasty food here."}]},
+  {},
+  {"content":[{ "style":"normal", "text":"There is a shiny brass lamp nearby."}]},
+  {},
+  {"content":[{ "style":"normal", "text":"There is an empty bottle here."}]},
+  {},
+  {"content":[{ "style":"normal", "text":">"}]}
+ ] }
+ ],
+ "input":[
+ {"id":19, "gen":2, "type":"line", "maxlen":256 }
+ ]}
+
+{"type":"update", "gen":3,
+ "content":[
+ {"id":22, "lines": [
+  { "line":0, "content":[{ "style":"normal", "text":" Inside Building                                     Score: 36    Moves: 2      "}]}
+ ] },
+ {"id":19, "text": [
+  {"append":true, "content":[{ "style":"input", "text":"I'm sorry, but \"qui-t\" is not a valid command or verb in this game. Please try a different verb or action."}]},
+  {"content":[{ "style":"normal", "text":"You seem to want to talk to someone, but I can't see whom."}]},
+  {},
+  {"content":[{ "style":"normal", "text":">"}]}
+ ] }
+ ],
+ "input":[
+ {"id":19, "gen":3, "type":"line", "maxlen":256 }
+ ]}
+
+{"type":"update", "gen":4,
+ "content":[
+ {"id":19, "text": [
+  {"append":true, "content":[{ "style":"input", "text":"quit"}]},
+  {"content":[{ "style":"normal", "text":"Are you sure you want to quit? "}]}
+ ] }
+ ],
+ "input":[
+ {"id":19, "gen":4, "type":"line", "maxlen":256 }
+ ]}
+
+{"type":"update", "gen":5,
+ "content":[
+ {"id":19, "text": [
+  {"append":true, "content":[{ "style":"input", "text":"yes"}]},
+  {}
+ ] }
+ ],
+ "input":[
+ ]}
+

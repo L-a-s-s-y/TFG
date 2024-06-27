@@ -1,0 +1,11 @@
+# ignore all save files
+*.save
+*.glkdata
+
+#ignore hiden directories and files
+.*
+!.gitignore
+
+#ignore the glulxe source directories
+glulxe
+remglk
