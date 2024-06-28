@@ -23,8 +23,11 @@ Para usar este TFG se necesita:
 
 Para la instalación de **Glulxe** es necesario de disponer de un compilador de **C** (idealmente **gcc**) y de la utilidad **make**. Una vez instaladas estas herramientas, hay que descargar tanto el código fuente de la máquina **Glulxe** como la librería **RemGlk**. Se nos descargarán sendos comprimidos con el software correspondiente que habrán de descomprimirse.
 Una vez hecho esto, dentro del directorio `glulxe-061/glulxe` habrá una gran cantidad de archivos, siendo el `Makefile` el que nos interesa. Este archivo contiene las instrucciones (explicadas en el propio `Makefile` pero en inglés) necesarias para el compilado del código de la máquina **Glulxe**, así como la “vinculación” con la biblioteca **RemGlk**. 
+
 En la primera sección se encuentran las rutas para la biblioteca a utilizar. Lo único que hay que hacer es comentar todas las instrucciones salvo las de la biblioteca **RemGlk**. Hay que asegurarse que las **rutas son adecuadas**, en caso contrario aparecerá un error de compilación. Es recomendable colocar los directorios que contienen el código fuente de **Glulxe** y **RemGlk** al mismo nivel pues será útil posteriormente.
+
 En la segunda sección hay que escoger el **compilador** e indicar es sistema operativo para la compilación. Al estar usando un sistema **GNU/Linux**, también se pide que se indique un **generador de números aleatorios**.
+
 Para la biblioteca **RemGlk** el proceso es muy similar. En este caso solo se pide seleccionar el **compilador** a usar.
 Tras esto hay que abrir una **terminal** en el directorio de **RemGlk** y escribir la orden:
 						
