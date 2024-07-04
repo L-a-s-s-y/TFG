@@ -14,7 +14,6 @@ def print_hi(name):
 
 
 def seleccion_juego():
-    # Descomentar cuando se use por consola
     subprocess.run(["clear"], shell=True)
     print("Games available:")
     script_result = subprocess.run(
@@ -49,7 +48,6 @@ def seleccion_juego():
             print("Type a NUMBER please: ", end="")
             seleccion = input()
 
-    # Descomentar cuando se use por consola
     subprocess.run(["clear"], shell=True)
     return jogos[int(seleccion)-1]
 
@@ -83,37 +81,28 @@ def impresion(jasonDecodificado, memoria):
         if not "specialinput" in jasonDecodificado:
             if "lines" in jasonDecodificado["content"][0]:
                 for elemento in jasonDecodificado["content"][0]["lines"]:
-                    # print(jasonDecodificado["content"][0]["lines"][0]["content"][0]["text"])
                     for parte in elemento["content"]:
-                        #print(parte["text"])
                         lineas_imprimir.append(parte["text"]+"\n")
                 if len(jasonDecodificado["content"]) > 1:
                     for elemento in jasonDecodificado["content"][1]["text"]:
                         if len(elemento) == 0:
-                            #print("\n", end="")
                             lineas_imprimir.append("\n")
                         elif "append" not in elemento:
                             if "content" in elemento:
                                 if elemento["content"][0]["text"] != ">":
-                                    #print(elemento["content"][0]["text"])
                                     lineas_imprimir.append(elemento["content"][0]["text"]+"\n")
                                     resultado += (elemento["content"][0]["text"]+" ")
                                 else:
-                                    #print(elemento["content"][0]["text"], end="")
                                     lineas_imprimir.append(elemento["content"][0]["text"])
             else:
                 for elemento in jasonDecodificado["content"][0]["text"]:
                     if len(elemento) == 0:
-                        #print("\n", end="")
                         lineas_imprimir.append("\n")
                     elif "append" not in elemento:
-                        #print(elemento["content"][0]["text"])
                         lineas_imprimir.append(elemento["content"][0]["text"]+"\n")
                 if jasonDecodificado["input"] == []:
                     centinela = False
         else:
-            #print("Type the file name. The file name must end with .save and it should only contain english alphabet symbols.")
-            #print(">", end="")
             lineas_imprimir.append("Type the file name. The file name must end with .save and it should only contain english alphabet symbols.\n")
             lineas_imprimir.append(">")
     else:
@@ -125,8 +114,6 @@ def impresion(jasonDecodificado, memoria):
     return centinela, lineas_imprimir
 
 
-# TODO: instruir con el prompt a chat con cada comando y ejemplo de uso (por ahora parece que no es necesario)
-# TODO: instruir con el formato de salida deseado (Parece resuelto)
 def mensajear(client, prompt, reservadas, memoria):
     entrada_usuario = input()
 
@@ -134,7 +121,8 @@ def mensajear(client, prompt, reservadas, memoria):
     if entrada_usuario not in reservadas:
         if entrada_usuario[0] != "#":
             completion = client.chat.completions.create(
-                model="gpt-3.5-turbo",
+                # model="gpt-3.5-turbo",
+                model="gpt-4o",
                 messages=[
                     {"role": "system", "content": prompt},
                     {"role": "user", "content": entrada_usuario}
@@ -163,12 +151,7 @@ def repeticion(client, prompt, historico_chat, historico_glulxe, historico_usuar
         model="gpt-4o",
         messages=conversacion
     )
-    """messages=[
-                {"role": "system", "content": prompt},
-                {"role": "user", "content": historico_usuario[len(historico_usuario)-1]},
-                {"role": "assistant", "content": historico_chat[len(historico_chat)-1]},
-                {"role": "user", "content": "The answer of the game was: "+historico_glulxe[len(historico_glulxe)-1]+" Please, reformulate your response."}
-            ]"""
+
     return completion.choices[0].message.content
 
 
@@ -230,7 +213,6 @@ if __name__ == '__main__':
 
     # Invocación de la máquina como proceso en segundo plano.
     glulxe = subprocess.Popen(
-        #["/home/hardraade/GLULXE/glulxe-061/glulxe/glulxe", "-fm", "/home/hardraade/GLULXE/GAMES/Advent.ulx"],
         ["glulxe/glulxe", "-fm", "glulxe-games/"+juego],
         bufsize=0,
         stdout=subprocess.PIPE,
